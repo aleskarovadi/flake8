@@ -17,10 +17,6 @@ from flake8 import exceptions
 from flake8 import processor
 from flake8 import utils
 
-current_dir = os.path.realpath(os.getcwd())
-out_dir = os.path.realpath(current_dir + "/../output")
-log_file = os.path.join(out_dir, 'flake8_log.txt')
-logging.basicConfig(filename=log_file, level=logging.DEBUG)
 LOG = logging.getLogger(__name__)
 
 SERIAL_RETRY_ERRNOS = set([
