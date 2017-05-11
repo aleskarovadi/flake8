@@ -2,6 +2,7 @@
 from __future__ import print_function
 
 import logging
+import os
 import sys
 import time
 
@@ -15,6 +16,12 @@ from flake8.main import options
 from flake8.options import aggregator
 from flake8.options import manager
 from flake8.plugins import manager as plugin_manager
+
+current_dir = os.path.realpath(os.getcwd())
+out_dir = os.path.realpath(current_dir + "/../output")
+log_file = os.path.join(out_dir, 'flake8_log.txt')
+
+logging.basicConfig(filename=log_file, level=logging.INFO)
 
 LOG = logging.getLogger(__name__)
 

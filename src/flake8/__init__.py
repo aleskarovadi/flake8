@@ -22,12 +22,6 @@ except ImportError:
 import os
 import sys
 
-current_dir = os.path.realpath(os.getcwd())
-out_dir = os.path.realpath(current_dir + "/../output")
-log_file = os.path.join(out_dir, 'flake8_log.txt')
-
-logging.basicConfig(filename=log_file, level=logging.INFO)
-
 LOG = logging.getLogger(__name__)
 LOG.addHandler(NullHandler())
 
