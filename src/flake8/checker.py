@@ -243,7 +243,9 @@ class Manager(object):
         self.checkers = [
             checker for checker in checkers if checker.should_process
         ]
-        LOG.info('Checking %d files', len(self.checkers))
+        LOG.info('Checking %d files:', len(self.checkers))
+        for f in self.checkers:
+            LOG.info(' -> {}'.format(f))
 
     def report(self):
         # type: () -> (int, int)
