@@ -18,7 +18,7 @@ from flake8.options import manager
 from flake8.plugins import manager as plugin_manager
 
 current_dir = os.path.realpath(os.getcwd())
-out_dir = os.path.realpath(current_dir + "/../output")
+out_dir = os.path.join(current_dir, "output")
 log_file = os.path.join(out_dir, 'flake8_debug_log.txt')
 logging.basicConfig(filename=log_file, level=logging.DEBUG)
 
